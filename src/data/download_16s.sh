@@ -2,6 +2,10 @@
 
 # AWS configuration should be the same as for almlab.bucket
 
+# Make this an empty string if you want to actually download the data
+# Make this "--dryrun" to just print the dry run command without actually downloading the data
+DRYRUN="--dryrun"
+
 ################
 # 24-hour study
 ################
@@ -10,7 +14,7 @@ RAW=s3://underworlds.bucket/data/sequencing/16S_and_18S/150702Alm_16S_24-hr/raw_
 
 mkdir ${DIR}
 mkdir ${DIR}/fastq
-aws s3 sync ${RAW} ${DIR}/fastq/ --dryrun
+aws s3 sync ${RAW} ${DIR}/fastq/ ${DRYRUN}
 
 ## metadata
 META="s3://underworlds.bucket/metadata/24hr-study/24hr EXP - Metadata April 8,9 2015.xlsx"
@@ -25,7 +29,7 @@ RAW=s3://underworlds.bucket/data/sequencing/16S_and_18S/160202Alm_16S_Chelsea-Po
 
 mkdir ${DIR}
 mkdir ${DIR}/fastq
-aws s3 sync ${RAW} ${DIR}/fastq/ --dryrun
+aws s3 sync ${RAW} ${DIR}/fastq/ ${DRYRUN}
 
 ## metadata - same as 24hr, but in a different tab on the excel sheet
 META="s3://underworlds.bucket/metadata/24hr-study/24hr EXP - Metadata April 8,9 2015.xlsx"
@@ -40,7 +44,7 @@ RAW=s3://underworlds.bucket/data/sequencing/16S_and_18S/170120AlmA_16S_multi-loc
 
 mkdir ${DIR}
 mkdir ${DIR}/fastq
-aws s3 sync ${RAW} ${DIR}/fastq/ --dryrun
+aws s3 sync ${RAW} ${DIR}/fastq/ ${DRYRUN}
 
 ## metadata
 META="s3://underworlds.bucket/metadata/multi-loc_ChelseaPortland-reseq_MIT-longitudinal/Metadata - 10 locations.xlsx"
@@ -55,7 +59,7 @@ RAW=s3://underworlds.bucket/data/sequencing/16S_and_18S/170201AlmA_16S_Kuwait/ra
 
 mkdir ${DIR}
 mkdir ${DIR}/fastq
-aws s3 sync ${RAW} ${DIR}/fastq/ --dryrun
+aws s3 sync ${RAW} ${DIR}/fastq/ ${DRYRUN}
 
 # metadata - same file as boston multi-loc
 META="s3://underworlds.bucket/metadata/multi-loc_ChelseaPortland-reseq_MIT-longitudinal/Metadata - 10 locations.xlsx"
@@ -70,7 +74,7 @@ RAW=s3://underworlds.bucket/data/sequencing/16S_and_18S/170613AlmA_16S_Seoul_Che
 
 mkdir ${DIR}
 mkdir ${DIR}/fastq
-aws s3 sync ${RAW} ${DIR}/fastq/ --dryrun
+aws s3 sync ${RAW} ${DIR}/fastq/ ${DRYRUN}
 
 # metadata - same file as boston multi-loc
 META="s3://underworlds.bucket/metadata/multi-loc_ChelseaPortland-reseq_MIT-longitudinal/Metadata - 10 locations.xlsx"
