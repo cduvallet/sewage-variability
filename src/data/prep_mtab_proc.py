@@ -158,3 +158,10 @@ newseqfile = update_seq_df(study, seqfile, keeprows)
 data_dir = os.path.join(RAWDIR, study, 'mzml')
 fsummary = os.path.join(RAWDIR, study, 'summary_file.txt')
 write_summary_file(study, newseqfile, data_dir, fsummary)
+
+####################
+# Log file for Make
+####################
+
+with open ('data/raw/metabolomics/prep_files_log.txt', 'w') as f:
+    f.write('All mtab proc files prepped.')

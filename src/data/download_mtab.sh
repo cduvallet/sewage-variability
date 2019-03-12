@@ -85,3 +85,9 @@ aws s3 sync ${RAW} ${DIR}/mzml/ ${DRYRUN}
 # metadata
 META="s3://underworlds.bucket/data/metabolomics/2018_0727-untargeted-MIT-cross-building-longitudinal/Sequence/mtab_Alm_UW_Lumos_072718_csv.csv"
 aws s3 cp "$META" ${DIR}/
+
+####################
+# Log file for Make
+####################
+
+echo -e "All raw data downloaded" > data/raw/metabolomics/download_log.txt
