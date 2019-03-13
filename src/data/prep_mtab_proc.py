@@ -37,6 +37,7 @@ def add_proc_columns(df, study):
     df['Sample ID'] = df['Sample Name'].apply(fix_sample_id)
     df['Ion Mode'] = 'negative'
     df['Batches'] = study
+    df.index = df['Sample ID']
     return df
 
 def fix_sample_id(s):
