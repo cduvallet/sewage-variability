@@ -79,7 +79,7 @@ def update_seq_df(study, seqfile, keeprows, remove_first_row=True):
 
     # Write the updated dataframe back to the folder
     newseqfile = seqfile.rsplit('.csv')[0] + '.for_proc.csv'
-    df.to_csv(os.path.join(RAWDIR, study, newseqfile), index=False)
+    df.to_csv(os.path.join(RAWDIR, study, newseqfile), index=True)
 
     return newseqfile
 
