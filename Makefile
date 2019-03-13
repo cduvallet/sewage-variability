@@ -42,9 +42,8 @@ PROC_MTAB := $(PROCDIR)/24hr.aligned_table.batch_24hr.negative.csv \
 
 
 MTAB_PROC: $(PROC_MTAB)
-
-mkdir $(PROCDIR)
-mkdir $(PROCDIR)/metabolomics
+	mkdir $(PROCDIR)
+	mkdir $(PROCDIR)/metabolomics
 
 # Wonder how I could use wildcard here...
 
