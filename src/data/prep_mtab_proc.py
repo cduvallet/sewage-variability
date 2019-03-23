@@ -143,7 +143,8 @@ write_summary_file(study, newseqfile, data_dir, fsummary)
 # Kuwait multi-location
 study = 'kuwait-multi-loc'
 seqfile = 'mtab_Alm_2017_0613_sequence.csv'
-keeprows = range(16, 62) + range(74, 120)
+# Might want to remove robot samples from these one day...
+keeprows = range(28, 81)
 newseqfile = update_seq_df(study, seqfile, keeprows)
 
 data_dir = os.path.join(RAWDIR, study, 'mzml')
